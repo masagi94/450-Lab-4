@@ -20,15 +20,16 @@ stopping = 'Stopping...'
 
 
 # Functions to carry out movement of the robot
-def moveForward():
+#Can make funtion move robot by a set amount each time, or use parameters for desired amount
+def moveForward(time):
         print(forward)
-def stop():
+def stop(time):
         print(stopping)
-def moveBackward():
+def moveBackward(time):
         print(backward)
-def moveLeft():
+def moveLeft(time):
         print(left)
-def moveRight():
+def moveRight(time):
         print(right)
 
 
