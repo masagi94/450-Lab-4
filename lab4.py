@@ -26,7 +26,7 @@ def __init__(self,in1=12,in2=13,ena=6,in3=20,in4=21,enb=26):
 		GPIO.setup(self.ENA,GPIO.OUT)
 		GPIO.setup(self.ENB,GPIO.OUT)
 		
-		self.forward()
+		#self.forward()
 		
 		self.PWMA = GPIO.PWM(self.ENA,500)
 		self.PWMB = GPIO.PWM(self.ENB,500)
@@ -76,3 +76,6 @@ def moveRight(time):
 
 
 moveForward()
+
+# Cleans up the used resources
+GPIO.cleanup()
