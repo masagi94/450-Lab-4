@@ -38,52 +38,52 @@ def __init__(self,in1=12,in2=13,ena=6,in3=20,in4=21,enb=26):
 # 0 = GPIO.LOW	1 = GPIO.HIGH
 def moveForward():
         print("Moving Forward...")
-        GPIO.output(,1)
-        GPIO.output(,0)
-        GPIO.output(,0)
-        GPIO.output(,1)
+        GPIO.output(12,1)
+        GPIO.output(13,0)
+        GPIO.output(20,0)
+        GPIO.output(21,1)
 
 def stop():
         print("Stopping...")
-        GPIO.output(,0)
-        GPIO.output(,0)
+        GPIO.output(12,0)
+        GPIO.output(13,0)
         GPIO.output(,0)
         GPIO.output(,0)
 
 def moveBackward():
         print("Moving Backward...")
-        GPIO.output(,0)
-        GPIO.output(,1)
-        GPIO.output(,1)
-        GPIO.output(,0)
+        GPIO.output(12,0)
+        GPIO.output(13,1)
+        GPIO.output(20,1)
+        GPIO.output(21,0)
 
 def moveLeft():
         print("Moving Left...")
-        GPIO.output(,0)
-        GPIO.output(,0)
-        GPIO.output(,0)
-        GPIO.output(,1)
+        GPIO.output(12,0)
+        GPIO.output(13,0)
+        GPIO.output(20,0)
+        GPIO.output(21,1)
 
 def moveRight():
         print("Moving Right...")
-        GPIO.output(,1)
-        GPIO.output(,0)
-        GPIO.output(,0)
-        GPIO.output(,0)
+        GPIO.output(12,1)
+        GPIO.output(13,0)
+        GPIO.output(20,0)
+        GPIO.output(21,0)
 
 def pivotRight()
 		print("Right Pivot...")
-        GPIO.output(,1)
-        GPIO.output(,0)
-        GPIO.output(,1)
-        GPIO.output(,0)
+        GPIO.output(12,1)
+        GPIO.output(13,0)
+        GPIO.output(20,1)
+        GPIO.output(21,0)
 
 def pivotLeft()
 		print("Left Pivot...")
-        GPIO.output(,0)
-        GPIO.output(,1)
-        GPIO.output(,0)
-        GPIO.output(,1)
+        GPIO.output(12,0)
+        GPIO.output(13,1)
+        GPIO.output(20,0)
+        GPIO.output(21,1)
 
 
 # Forward and backward movement
