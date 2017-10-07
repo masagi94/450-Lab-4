@@ -47,8 +47,8 @@ def stop():
         print("Stopping...")
         GPIO.output(12,0)
         GPIO.output(13,0)
-        GPIO.output(,0)
-        GPIO.output(,0)
+        GPIO.output(20,0)
+        GPIO.output(21,0)
 
 def moveBackward():
         print("Moving Backward...")
