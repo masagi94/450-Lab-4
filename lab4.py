@@ -36,46 +36,106 @@ def __init__(self,in1=12,in2=13,ena=6,in3=20,in4=21,enb=26):
 # Functions to carry out movement of the robot
 # Can make funtion move robot by a set amount each time, or use parameters for desired amount
 # 0 = GPIO.LOW	1 = GPIO.HIGH
-def moveForward(time):
+def moveForward():
         print("Moving Forward...")
         GPIO.output(,1)
         GPIO.output(,0)
         GPIO.output(,0)
         GPIO.output(,1)
 
-def stop(time):
+def stop():
         print("Stopping...")
         GPIO.output(,0)
         GPIO.output(,0)
         GPIO.output(,0)
         GPIO.output(,0)
 
-def moveBackward(time):
+def moveBackward():
         print("Moving Backward...")
         GPIO.output(,0)
         GPIO.output(,1)
         GPIO.output(,1)
         GPIO.output(,0)
 
-def moveLeft(time):
+def moveLeft():
         print("Moving Left...")
         GPIO.output(,0)
         GPIO.output(,0)
         GPIO.output(,0)
         GPIO.output(,1)
 
-def moveRight(time):
+def moveRight():
         print("Moving Right...")
         GPIO.output(,1)
         GPIO.output(,0)
         GPIO.output(,0)
         GPIO.output(,0)
 
+def pivotRight()
+		print("Right Pivot...")
+        GPIO.output(,1)
+        GPIO.output(,0)
+        GPIO.output(,1)
+        GPIO.output(,0)
+
+def pivotLeft()
+		print("Left Pivot...")
+        GPIO.output(,0)
+        GPIO.output(,1)
+        GPIO.output(,0)
+        GPIO.output(,1)
 
 
-
-
+# Forward and backward movement
 moveForward()
+time.sleep(5)
+stop()
+time.sleep(1)
+moveBackward()
+time.sleep(10)
+stop()
+time.sleep(1)
+moveForward()
+time.sleep(5)
+stop()
+time.sleep(1)
+
+# Movement to the right and back to the center
+# He wants a pivot, not a turn left or turn right. Made a function for that, dont know if it works
+pivotRight()
+time.sleep(1) # How much time would be needed to pivot 90%?
+stop()
+time.sleep(1)
+moveForward()
+time.sleep(5)
+stop()
+time.sleep(1)
+moveBackward()
+time.sleep(5)
+stop()
+time.sleep(1)
+
+
+# Movement to the left and back to the center
+pivotLeft()
+time.sleep(2) # Again, how much time would pivoting take?
+stop()
+moveForward()
+time.sleep(5)
+stop()
+time.sleep(1)
+moveBackward()
+time.sleep(5)
+stop()
+time.sleep(1)
+
+# Face forward, ends movement.
+pivotRight()
+time.sleep(1)
+stop()
+
+
+
 
 # Cleans up the used resources
 GPIO.cleanup()
