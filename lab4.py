@@ -4,34 +4,41 @@ import RPi.GPIO as  GPIO
 
 
 # Should we keep this function? Idk how much we're allowed to use from the provided code..
-def __init__(self,in1=12,in2=13,ena=6,in3=20,in4=21,enb=26):
-		self.IN1 = in1
-		self.IN2 = in2
-		self.IN3 = in3
-		self.IN4 = in4
-		self.ENA = ena
-		self.ENB = enb
+# def __init__(self,in1=12,in2=13,ena=6,in3=20,in4=21,enb=26):
+# 		self.IN1 = in1
+# 		self.IN2 = in2
+# 		self.IN3 = in3
+# 		self.IN4 = in4
+# 		self.ENA = ena
+# 		self.ENB = enb
 
 		# Sets the the pin numbering mode to BCM
-		GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 
-		# If the Pi has more than one script/circuit on the GPIO, warnings will print out.
-		# This turns off those warnings.
-		GPIO.setwarnings(False)
-		
-		GPIO.setup(self.IN1,GPIO.OUT)
-		GPIO.setup(self.IN2,GPIO.OUT)
-		GPIO.setup(self.IN3,GPIO.OUT)
-		GPIO.setup(self.IN4,GPIO.OUT)
-		GPIO.setup(self.ENA,GPIO.OUT)
-		GPIO.setup(self.ENB,GPIO.OUT)
-		
-		#self.forward()
-		
-		self.PWMA = GPIO.PWM(self.ENA,500)
-		self.PWMB = GPIO.PWM(self.ENB,500)
-		self.PWMA.start(50)
-		self.PWMB.start(50)
+# If the Pi has more than one script/circuit on the GPIO, warnings will print out.
+# This turns off those warnings.
+GPIO.setwarnings(False)
+
+GPIO.setup(12,GPIO.OUT)
+GPIO.setup(13,GPIO.OUT)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT)
+GPIO.setup(6,GPIO.OUT)
+GPIO.setup(26,GPIO.OUT)
+
+#self.forward()
+# ena
+GPIO.PWM(6,500)
+GPIO.PWM(6,500).start(50)
+
+# enb
+GPIO.PWM(26,500)
+GPIO.PWM(26,500).start(50)
+
+# self.PWMA = GPIO.PWM(self.ENA,500)
+# self.PWMB = GPIO.PWM(self.ENB,500)
+# self.PWMA.start(50)
+# self.PWMB.start(50)
 
 # Functions to carry out movement of the robot
 # Can make funtion move robot by a set amount each time, or use parameters for desired amount
@@ -71,14 +78,14 @@ def moveRight():
         GPIO.output(20,0)
         GPIO.output(21,0)
 
-def pivotRight()
+def pivotRight():
 		print("Right Pivot...")
         GPIO.output(12,1)
         GPIO.output(13,0)
         GPIO.output(20,1)
         GPIO.output(21,0)
 
-def pivotLeft()
+def pivotLeft():
 		print("Left Pivot...")
         GPIO.output(12,0)
         GPIO.output(13,1)
